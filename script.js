@@ -22,7 +22,13 @@ const addRowButton = document.getElementById('add-row');
 addRowButton.addEventListener('click', makeRow);
 
 //added during 3) Event Delegation
-function colorize(){
-    console.log('clicked!')
+function colorize(event){
+    // console.log('clicked!')  removed during 3) Event Target
+    const target = event.target;
+    if(target.className === ''){
+        target.className = 'red';
+    } else{
+        target.className = '';
+    }
 }
 table.addEventListener('click', colorize)
