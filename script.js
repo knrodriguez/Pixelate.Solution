@@ -5,6 +5,9 @@
 //use array syntax to access the element we want (there is only one table in our index.html, so we want the first element in the collection) 
 const table = document.getElementsByTagName('table')[0];
 
+//added during 4) Choosing A Color
+let currentColor = 'red';
+
 function makeRow(){
     const tr = document.createElement('tr');
     for(let i=0; i < 20; i++){
@@ -25,7 +28,7 @@ addRowButton.addEventListener('click', makeRow);
 function colorize(event){
     const target = event.target;
     if(target.className === ''){
-        target.className = 'red';
+        target.className = currentColor; //changed during 4) Choosing A Color
     } else{
         target.className = '';
     }
@@ -34,6 +37,11 @@ table.addEventListener('click', colorize)
 
 //added during 4) Change Event
 const select = document.getElementsByTagName('select')[0];
-select.addEventListener('change', (event) => {
-    console.log(event.target.value)
-})
+
+//added during 4) Choosing A Color
+function changeColor(event){
+    currentColor = event.target.value;
+}
+
+//changed during 4) Choosing A Color
+select.addEventListener('change', changeColor)
