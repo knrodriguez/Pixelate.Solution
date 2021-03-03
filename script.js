@@ -27,7 +27,7 @@ addRowButton.addEventListener('click', makeRow);
 //added during 3) Event Delegation
 function colorize(event){
     const target = event.target;
-    if(target.className === ''){
+    if(target.className !== currentColor){ //changed during 4) Toggling Colors
         target.className = currentColor; //changed during 4) Choosing A Color
     } else{
         target.className = '';
