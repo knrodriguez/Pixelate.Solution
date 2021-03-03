@@ -23,7 +23,6 @@ addRowButton.addEventListener('click', makeRow);
 
 //added during 3) Event Delegation
 function colorize(event){
-    // console.log('clicked!')  removed during 3) Event Target
     const target = event.target;
     if(target.className === ''){
         target.className = 'red';
@@ -32,3 +31,9 @@ function colorize(event){
     }
 }
 table.addEventListener('click', colorize)
+
+//added during 4) Change Event
+const select = document.getElementsByTagName('select')[0];
+select.addEventListener('change', (event) => {
+    console.log(event.target.value)
+})
