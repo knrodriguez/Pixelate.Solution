@@ -20,3 +20,9 @@ makeRow();
 //added during "Making Rows"
 const addRowButton = document.getElementById('add-row');
 addRowButton.addEventListener('click', makeRow);
+
+//added during 3) Event Delegation
+function colorize(){
+    console.log('clicked!')
+}
+table.addEventListener('click', colorize)
