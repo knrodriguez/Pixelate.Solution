@@ -47,3 +47,15 @@ function changeColor(event){
 
 //changed during 4) Choosing A Color
 select.addEventListener('change', changeColor)
+
+//added during 5) Dragging to Paint
+table.addEventListener('mousedown', addMouseOverListener);
+table.addEventListener('mouseup', removeMouseOverListener);
+
+function addMouseOverListener(){
+    table.addEventListener('mouseover', colorize)
+}
+
+function removeMouseOverListener(){
+    table.removeEventListener('mouseover', colorize)
+}
